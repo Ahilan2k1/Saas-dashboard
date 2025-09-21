@@ -1,6 +1,6 @@
 // src/components/layout/Sidebar.jsx
 import React, { useState } from "react";
-import { Link } from "react-router-dom";   // ⬅️ Import Link
+import { Link } from "react-router-dom";
 import { ChevronDown, Folder, BookOpen, Grid, Star, User } from "lucide-react";
 
 export default function Sidebar() {
@@ -32,7 +32,12 @@ export default function Sidebar() {
       <div className="text-xs text-gray-400 uppercase mb-2">Dashboards</div>
       <ul className="mb-6 space-y-2">
         <li className="flex items-center gap-2 px-3 py-2 rounded-md bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white">
+        <Link
+            to="/"
+            className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300"
+          >
           <Grid size={16} /> Default
+          </Link>
         </li>
 
         {/* ✅ eCommerce now navigates to /orders */}
