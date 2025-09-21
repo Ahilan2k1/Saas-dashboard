@@ -1,0 +1,13 @@
+/* index.css (add to top of your file) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ensure global color transitions */
+* { @apply transition-colors duration-300 ease-in-out; }
+
+/* fix body/html full height if needed */
+html, body, #root { height: 100%; }
+
+/* optional visual debug during layout issues */
+/* .debug-border * { outline: 1px solid rgba(255,0,0,0.08); } */
