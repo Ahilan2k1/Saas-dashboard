@@ -1,5 +1,6 @@
 // src/components/layout/Sidebar.jsx
 import React, { useState } from "react";
+import { Link } from "react-router-dom";   // ⬅️ Import Link
 import { ChevronDown, Folder, BookOpen, Grid, Star, User } from "lucide-react";
 
 export default function Sidebar() {
@@ -33,9 +34,17 @@ export default function Sidebar() {
         <li className="flex items-center gap-2 px-3 py-2 rounded-md bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white">
           <Grid size={16} /> Default
         </li>
-        <li className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300">
-          <BookOpen size={16} /> eCommerce
+
+        {/* ✅ eCommerce now navigates to /orders */}
+        <li>
+          <Link
+            to="/orders"
+            className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300"
+          >
+            <BookOpen size={16} /> eCommerce
+          </Link>
         </li>
+
         <li className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300">
           <Folder size={16} /> Projects
         </li>
@@ -69,8 +78,10 @@ export default function Sidebar() {
         )}
       </div>
 
-      {/* Extra spacing to make sure bottom items aren't clipped */}
-      <div className="mt-6 pt-6 border-t border-gray-100 dark:border-gray-700 text-sm text-gray-500">© {new Date().getFullYear()} ByeWind</div>
+      {/* Footer */}
+      <div className="mt-6 pt-6 border-t border-gray-100 dark:border-gray-700 text-sm text-gray-500">
+        © {new Date().getFullYear()} ByeWind
+      </div>
     </aside>
   );
 }
